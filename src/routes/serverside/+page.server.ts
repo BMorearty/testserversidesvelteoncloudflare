@@ -1,6 +1,6 @@
 import type { PageServerLoad } from './$types';
-import process from 'node:process';
+import * as env from '$env/static/private';
 
 export const load: PageServerLoad = () => {
-  return { env: JSON.stringify(process.env, null, 2) };
+  return { env: JSON.stringify(env, null, 2) };
 };
